@@ -7,12 +7,17 @@
 
 import UIKit
 
-struct ItemViewModel {
+struct ItemViewModel: Codable {
     var title: String
     var subtitle: String
     
-    var image = ""
-    var color = UIColor.gray
+    var color: ItemColor = .gray
+    
+    enum ItemColor: Codable {
+        case green
+        case red
+        case gray
+    }
 }
 
 
@@ -21,9 +26,9 @@ extension UITableViewCell {
         var content = UIListContentConfiguration.sidebarCell()
         
         content.text = vm.title
-        content.secondaryText = vm.subtitle
-        content.image = UIImage(systemName: vm.image)
-        content.imageProperties.tintColor = vm.color
+        
+        let attributes = [NSAttributedString.Key.foregroundColor: vm.color == .red ? UIColor.red : UIColor.green]
+        content.secondaryAttributedText = NSAttributedString(string: vm.subtitle, attributes: attributes)
         
         contentConfiguration = content
     }

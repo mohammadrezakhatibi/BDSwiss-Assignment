@@ -23,7 +23,11 @@ class MainCoordinator: Coordinator {
     }
 
     func start() {
-        let vc = UIViewController()
+        let api = RateAPIService()
+        let cache = LocalCacheService()
+        let callback = RateRepeatServiceAdapter(api: api, cache: cache)
+        let service = RateListServiceAdapter(api: api, cache: cache).callback(callback)
+        let vc = ListViewController(service: service)
         vc.title = "Rates"
         navigationController?.pushViewController(vc, animated: false)
     }
