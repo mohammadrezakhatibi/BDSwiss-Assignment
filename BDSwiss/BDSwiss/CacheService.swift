@@ -13,7 +13,7 @@ protocol CacheService {
 }
 
 class LocalCacheService: CacheService {
-    
+    /// Save latest items in UserDefaults
     func saveData(items: [ItemViewModel]) {
         let encoder = JSONEncoder()
         let data = try? encoder.encode(items)
@@ -21,6 +21,7 @@ class LocalCacheService: CacheService {
         UserDefaults.standard.set(data, forKey: "Rates")
     }
     
+    /// Load cached datas from UserDefault
     func loadData() -> [ItemViewModel] {
         if let data = UserDefaults.standard.data(forKey: "Rates") {
             do {

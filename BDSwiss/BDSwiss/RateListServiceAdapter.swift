@@ -49,16 +49,10 @@ class RateListServiceAdapter: ListService {
     ///
     /// This method compare cached datas (provided by CacheService) and result of api call for
     /// assigning rate color for ItemViewModel
-    ///     let response = [ItemViewModel(title: "EURUSD", subtitle: "1.2812678708738442")]
-    ///     let cachedItems = [ItemViewModel(title: "EURUSD", subtitle: "0.9812678708738442")]
-    ///     color should be green
     ///
-    ///
-    ///
-    ///
-    /// - Parameter previous: the cached items
-    /// - Parameter latest: result form API call
-    /// - Return [ItemViewModel]
+    ///  - parameter previous: the cached items
+    ///  - parameter latest: result form API call
+    /// - Returns: [ItemViewModel]
     /// - Complexity: O(n) on average, over `for` loop
     private func rateStatusCalculation(
         previous: [ItemViewModel],
@@ -85,14 +79,22 @@ class RateListServiceAdapter: ListService {
     }
     
 }
-
 extension Double {
-    func limitDecimal(to decimal: Int) -> String {
-        String(format: "%.\(decimal)f", self)
+    /// Format doubles to the specific number.
+    ///
+    /// - Parameters:
+    ///   - fractionDigits: Number of fraction.
+    ///
+    /// - Returns: String
+    func limitDecimal(to fractionDigits: Int) -> String {
+        String(format: "%.\(fractionDigits)f", self)
     }
 }
 
 extension String {
+    /// Add slash(/) separator for rate pair.
+    ///
+    /// - Returns: Rate pair separated with / {(EUR/USD)}
     func addRatePairSeparator() -> String {
         var newStr = self
         newStr.insert("/", at: self.index(startIndex, offsetBy: 3))

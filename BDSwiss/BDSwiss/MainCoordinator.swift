@@ -25,7 +25,7 @@ class MainCoordinator: Coordinator {
     func start() {
         let api = RateAPIService()
         let cache = LocalCacheService()
-        let callback = RateRepeatServiceAdapter(api: api, cache: cache)
+        let callback = RateRepeatingServiceAdapter(api: api, cache: cache)
         let service = RateListServiceAdapter(api: api, cache: cache).callback(callback)
         let vc = ListViewController(service: service)
         vc.title = "Rates"

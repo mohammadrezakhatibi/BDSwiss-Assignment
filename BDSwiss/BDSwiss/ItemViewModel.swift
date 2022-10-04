@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct ItemViewModel: Codable {
+struct ItemViewModel: Codable, Equatable {
     var title: String
     var subtitle: String
     

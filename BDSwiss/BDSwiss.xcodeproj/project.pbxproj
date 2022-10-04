@@ -30,6 +30,7 @@
 		D7ABB6D928EC326300A599B6 /* ItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6D828EC326200A599B6 /* ItemViewModelTests.swift */; };
 		D7ABB6E928EC3F4A00A599B6 /* APIManager in Frameworks */ = {isa = PBXBuildFile; productRef = D7ABB6E828EC3F4A00A599B6 /* APIManager */; };
 		D7ABB6EC28EC3FC600A599B6 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = D7ABB6EB28EC3FC600A599B6 /* Core */; };
+		E49E620C28EC738A00B4127C /* LocalCacheServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E620B28EC738A00B4127C /* LocalCacheServiceTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		D7ABB6D828EC326200A599B6 /* ItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModelTests.swift; sourceTree = "<group>"; };
 		D7ABB6E628EC3ED600A599B6 /* APIManager */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = APIManager; path = ../APIManager; sourceTree = "<group>"; };
 		D7ABB6EA28EC3F6E00A599B6 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Core; path = ../Core; sourceTree = "<group>"; };
+		E49E620B28EC738A00B4127C /* LocalCacheServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCacheServiceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +136,7 @@
 			children = (
 				D7ABB6AB28EC093900A599B6 /* Domain */,
 				D7ABB6AA28EC07F800A599B6 /* Resources */,
-				D7ABB6A428EC055500A599B6 /* Coordinator */,
+				D7ABB6A428EC055500A599B6 /* Coordinators */,
 				D7ABB6A328EC03BE00A599B6 /* Application */,
 			);
 			path = BDSwiss;
@@ -148,6 +150,7 @@
 				D7ABB6B728EC0AD500A599B6 /* LisViewControllerTests.swift */,
 				D7ABB6C828EC103300A599B6 /* RateListViewControllerTests.swift */,
 				D7ABB6D828EC326200A599B6 /* ItemViewModelTests.swift */,
+				E49E620B28EC738A00B4127C /* LocalCacheServiceTest.swift */,
 			);
 			path = BDSwissTests;
 			sourceTree = "<group>";
@@ -171,12 +174,12 @@
 			name = Application;
 			sourceTree = "<group>";
 		};
-		D7ABB6A428EC055500A599B6 /* Coordinator */ = {
+		D7ABB6A428EC055500A599B6 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
 				D7ABB6A528EC056A00A599B6 /* MainCoordinator.swift */,
 			);
-			name = Coordinator;
+			name = Coordinators;
 			sourceTree = "<group>";
 		};
 		D7ABB6A728EC07BF00A599B6 /* Coordinators */ = {
@@ -412,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7ABB6BB28EC0C1000A599B6 /* ListViewController+SimulateLoadingData.swift in Sources */,
+				E49E620C28EC738A00B4127C /* LocalCacheServiceTest.swift in Sources */,
 				D7ABB6B828EC0AD500A599B6 /* LisViewControllerTests.swift in Sources */,
 				D7ABB6C928EC103300A599B6 /* RateListViewControllerTests.swift in Sources */,
 				D7ABB6A928EC07D900A599B6 /* MainCoordinatorTests.swift in Sources */,

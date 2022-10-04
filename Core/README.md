@@ -1,3 +1,3 @@
 # Core
 
-A description of this package.
+Core package for BDSwiss project. it contains extensions, helpers, etc.

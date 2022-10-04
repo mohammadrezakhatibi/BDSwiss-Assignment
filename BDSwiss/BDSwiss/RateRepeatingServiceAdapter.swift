@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class RateRepeatServiceAdapter: RateListServiceAdapter {
+class RateRepeatingServiceAdapter: RateListServiceAdapter {
     
     var every: TimeInterval = 10
     private var cancelable: Set<AnyCancellable> = []

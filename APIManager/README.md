@@ -1,3 +1,3 @@
 # APIManager
 
-A description of this package.
+API manager for BDSwiss project.
