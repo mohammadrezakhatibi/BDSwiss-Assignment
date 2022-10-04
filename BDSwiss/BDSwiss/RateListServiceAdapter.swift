@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class RateListServiceAdapter: ListService {
     
     var api: RateService
@@ -46,6 +45,21 @@ class RateListServiceAdapter: ListService {
         return items
     }
     
+    /// Calculation of the state of each rate.
+    ///
+    /// This method compare cached datas (provided by CacheService) and result of api call for
+    /// assigning rate color for ItemViewModel
+    ///     let response = [ItemViewModel(title: "EURUSD", subtitle: "1.2812678708738442")]
+    ///     let cachedItems = [ItemViewModel(title: "EURUSD", subtitle: "0.9812678708738442")]
+    ///     color should be green
+    ///
+    ///
+    ///
+    ///
+    /// - Parameter previous: the cached items
+    /// - Parameter latest: result form API call
+    /// - Return [ItemViewModel]
+    /// - Complexity: O(n) on average, over `for` loop
     private func rateStatusCalculation(
         previous: [ItemViewModel],
         latest: [ItemViewModel]) -> [ItemViewModel] {
@@ -55,7 +69,7 @@ class RateListServiceAdapter: ListService {
                 return latest
             }
             
-            for (index,item) in previous.enumerated() {
+            for (index, item) in previous.enumerated() {
                 
                 let isGreater = Double(latest[index].subtitle) ?? 0 >= Double(item.subtitle) ?? 0
                 switch isGreater {

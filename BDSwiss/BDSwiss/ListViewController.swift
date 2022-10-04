@@ -9,6 +9,10 @@ import UIKit
 import Core
 
 protocol ListService {
+    /// Provide datas for ListViewController
+    ///
+    /// This method provide array of ItemViewModel  for displaying on ListViewController
+    ///
     func loadItems(completion: @escaping (Result<[ItemViewModel], Error>) -> Void)
 }
 
