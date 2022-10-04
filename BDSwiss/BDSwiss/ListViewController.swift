@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Core
 
 protocol ListService {
     func loadItems(completion: @escaping (Result<[ItemViewModel], Error>) -> Void)

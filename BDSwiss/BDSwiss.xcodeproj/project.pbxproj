@@ -16,14 +16,11 @@
 		D7ABB6A628EC056A00A599B6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6A528EC056A00A599B6 /* MainCoordinator.swift */; };
 		D7ABB6A928EC07D900A599B6 /* MainCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6A828EC07D900A599B6 /* MainCoordinatorTests.swift */; };
 		D7ABB6B028EC097400A599B6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6AF28EC097400A599B6 /* ListViewController.swift */; };
-		D7ABB6B428EC09E200A599B6 /* UITableView+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6B328EC09E200A599B6 /* UITableView+ReusableCell.swift */; };
-		D7ABB6B628EC0AA000A599B6 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6B528EC0AA000A599B6 /* UIViewController+Alert.swift */; };
 		D7ABB6B828EC0AD500A599B6 /* LisViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6B728EC0AD500A599B6 /* LisViewControllerTests.swift */; };
 		D7ABB6BB28EC0C1000A599B6 /* ListViewController+SimulateLoadingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6BA28EC0C1000A599B6 /* ListViewController+SimulateLoadingData.swift */; };
 		D7ABB6BE28EC0C6800A599B6 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6BD28EC0C6800A599B6 /* ItemViewModel.swift */; };
 		D7ABB6C228EC0DC400A599B6 /* RateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6C128EC0DC400A599B6 /* RateService.swift */; };
 		D7ABB6C428EC0DDD00A599B6 /* RateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6C328EC0DDD00A599B6 /* RateResponse.swift */; };
-		D7ABB6C728EC0E1800A599B6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6C628EC0E1800A599B6 /* APIManager.swift */; };
 		D7ABB6C928EC103300A599B6 /* RateListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6C828EC103300A599B6 /* RateListViewControllerTests.swift */; };
 		D7ABB6CB28EC10A600A599B6 /* SceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6CA28EC10A600A599B6 /* SceneBuilder.swift */; };
 		D7ABB6CF28EC1EB300A599B6 /* ListServiceCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6CE28EC1EB300A599B6 /* ListServiceCallback.swift */; };
@@ -31,6 +28,8 @@
 		D7ABB6D328EC2BFA00A599B6 /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6D228EC2BFA00A599B6 /* CacheService.swift */; };
 		D7ABB6D528EC2C3C00A599B6 /* RateListServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6D428EC2C3C00A599B6 /* RateListServiceAdapter.swift */; };
 		D7ABB6D928EC326300A599B6 /* ItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6D828EC326200A599B6 /* ItemViewModelTests.swift */; };
+		D7ABB6E928EC3F4A00A599B6 /* APIManager in Frameworks */ = {isa = PBXBuildFile; productRef = D7ABB6E828EC3F4A00A599B6 /* APIManager */; };
+		D7ABB6EC28EC3FC600A599B6 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = D7ABB6EB28EC3FC600A599B6 /* Core */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,14 +63,11 @@
 		D7ABB6A528EC056A00A599B6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		D7ABB6A828EC07D900A599B6 /* MainCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorTests.swift; sourceTree = "<group>"; };
 		D7ABB6AF28EC097400A599B6 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		D7ABB6B328EC09E200A599B6 /* UITableView+ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ReusableCell.swift"; sourceTree = "<group>"; };
-		D7ABB6B528EC0AA000A599B6 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		D7ABB6B728EC0AD500A599B6 /* LisViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LisViewControllerTests.swift; sourceTree = "<group>"; };
 		D7ABB6BA28EC0C1000A599B6 /* ListViewController+SimulateLoadingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewController+SimulateLoadingData.swift"; sourceTree = "<group>"; };
 		D7ABB6BD28EC0C6800A599B6 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		D7ABB6C128EC0DC400A599B6 /* RateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateService.swift; sourceTree = "<group>"; };
 		D7ABB6C328EC0DDD00A599B6 /* RateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateResponse.swift; sourceTree = "<group>"; };
-		D7ABB6C628EC0E1800A599B6 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		D7ABB6C828EC103300A599B6 /* RateListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateListViewControllerTests.swift; sourceTree = "<group>"; };
 		D7ABB6CA28EC10A600A599B6 /* SceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneBuilder.swift; sourceTree = "<group>"; };
 		D7ABB6CE28EC1EB300A599B6 /* ListServiceCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServiceCallback.swift; sourceTree = "<group>"; };
@@ -79,6 +75,8 @@
 		D7ABB6D228EC2BFA00A599B6 /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 		D7ABB6D428EC2C3C00A599B6 /* RateListServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateListServiceAdapter.swift; sourceTree = "<group>"; };
 		D7ABB6D828EC326200A599B6 /* ItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModelTests.swift; sourceTree = "<group>"; };
+		D7ABB6E628EC3ED600A599B6 /* APIManager */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = APIManager; path = ../APIManager; sourceTree = "<group>"; };
+		D7ABB6EA28EC3F6E00A599B6 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Core; path = ../Core; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7ABB6E928EC3F4A00A599B6 /* APIManager in Frameworks */,
+				D7ABB6EC28EC3FC600A599B6 /* Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,9 +109,12 @@
 		D7ABB66728EC038800A599B6 = {
 			isa = PBXGroup;
 			children = (
+				D7ABB6E628EC3ED600A599B6 /* APIManager */,
+				D7ABB6EA28EC3F6E00A599B6 /* Core */,
 				D7ABB67228EC038800A599B6 /* BDSwiss */,
 				D7ABB68928EC038B00A599B6 /* BDSwissTests */,
 				D7ABB69328EC038B00A599B6 /* BDSwissUITests */,
+				D7ABB6E728EC3F4A00A599B6 /* Frameworks */,
 				D7ABB67128EC038800A599B6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,8 +132,6 @@
 		D7ABB67228EC038800A599B6 /* BDSwiss */ = {
 			isa = PBXGroup;
 			children = (
-				D7ABB6C528EC0E0D00A599B6 /* APIManager */,
-				D7ABB6B128EC09A900A599B6 /* Helpers */,
 				D7ABB6AB28EC093900A599B6 /* Domain */,
 				D7ABB6AA28EC07F800A599B6 /* Resources */,
 				D7ABB6A428EC055500A599B6 /* Coordinator */,
@@ -234,23 +235,6 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		D7ABB6B128EC09A900A599B6 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				D7ABB6B228EC09BE00A599B6 /* Extentions */,
-			);
-			name = Helpers;
-			sourceTree = "<group>";
-		};
-		D7ABB6B228EC09BE00A599B6 /* Extentions */ = {
-			isa = PBXGroup;
-			children = (
-				D7ABB6B328EC09E200A599B6 /* UITableView+ReusableCell.swift */,
-				D7ABB6B528EC0AA000A599B6 /* UIViewController+Alert.swift */,
-			);
-			name = Extentions;
-			sourceTree = "<group>";
-		};
 		D7ABB6B928EC0BF200A599B6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,12 +252,11 @@
 			name = "View Models";
 			sourceTree = "<group>";
 		};
-		D7ABB6C528EC0E0D00A599B6 /* APIManager */ = {
+		D7ABB6E728EC3F4A00A599B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D7ABB6C628EC0E1800A599B6 /* APIManager.swift */,
 			);
-			path = APIManager;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +275,10 @@
 			dependencies = (
 			);
 			name = BDSwiss;
+			packageProductDependencies = (
+				D7ABB6E828EC3F4A00A599B6 /* APIManager */,
+				D7ABB6EB28EC3FC600A599B6 /* Core */,
+			);
 			productName = BDSwiss;
 			productReference = D7ABB67028EC038800A599B6 /* BDSwiss.app */;
 			productType = "com.apple.product-type.application";
@@ -408,14 +395,11 @@
 			files = (
 				D7ABB6D528EC2C3C00A599B6 /* RateListServiceAdapter.swift in Sources */,
 				D7ABB6A628EC056A00A599B6 /* MainCoordinator.swift in Sources */,
-				D7ABB6C728EC0E1800A599B6 /* APIManager.swift in Sources */,
 				D7ABB6CF28EC1EB300A599B6 /* ListServiceCallback.swift in Sources */,
 				D7ABB6D128EC1EFF00A599B6 /* RateRepeatingServiceAdapter.swift in Sources */,
 				D7ABB67428EC038800A599B6 /* AppDelegate.swift in Sources */,
 				D7ABB6C228EC0DC400A599B6 /* RateService.swift in Sources */,
-				D7ABB6B428EC09E200A599B6 /* UITableView+ReusableCell.swift in Sources */,
 				D7ABB6BE28EC0C6800A599B6 /* ItemViewModel.swift in Sources */,
-				D7ABB6B628EC0AA000A599B6 /* UIViewController+Alert.swift in Sources */,
 				D7ABB6B028EC097400A599B6 /* ListViewController.swift in Sources */,
 				D7ABB6C428EC0DDD00A599B6 /* RateResponse.swift in Sources */,
 				D7ABB6D328EC2BFA00A599B6 /* CacheService.swift in Sources */,
@@ -756,6 +740,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D7ABB6E828EC3F4A00A599B6 /* APIManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = APIManager;
+		};
+		D7ABB6EB28EC3FC600A599B6 /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D7ABB66828EC038800A599B6 /* Project object */;
 }

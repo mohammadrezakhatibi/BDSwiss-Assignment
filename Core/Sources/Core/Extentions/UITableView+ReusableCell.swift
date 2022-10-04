@@ -8,12 +8,12 @@
 import UIKit
 
 /// A protocol that all reusable cells must implement.
-protocol ReusableCell: AnyObject {
+public protocol ReusableCell: AnyObject {
     static var cellIdentifier: String { get }
 }
 
 // Default protocol implementation
-extension ReusableCell {
+public extension ReusableCell {
 
     static var cellIdentifier: String {
         return String(describing: self)
@@ -23,7 +23,7 @@ extension ReusableCell {
 
 extension UITableViewCell: ReusableCell {}
 
-extension UITableView {
+public extension UITableView {
 
     /// Registers a set of classes for use in creating new table view cells.
     /// - Parameter cellTypes: The cell types to register

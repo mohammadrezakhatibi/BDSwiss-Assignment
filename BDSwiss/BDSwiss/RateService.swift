@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import APIManager
 
 protocol RateService {
     func loadRates(completion: @escaping (Result<RatesResponse, Error>) -> Void)

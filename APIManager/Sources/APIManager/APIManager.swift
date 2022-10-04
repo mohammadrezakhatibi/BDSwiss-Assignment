@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-class APIManager {
+public class APIManager {
     private init() {}
     
-    static var shared = APIManager()
+    public static var shared = APIManager()
 }
 
-extension APIManager {
+public extension APIManager {
     
     func request<T: Codable>(
         method: HTTPMethod,
@@ -35,19 +35,19 @@ extension APIManager {
 }
 
 
-enum HTTPMethod: String {
+public enum HTTPMethod: String {
     case get = "GET"
     case post = "POST"
 }
 
-enum Path: String {
+public enum Path: String {
     case rates = "rates"
 }
 
-struct AppConfiguration {
+public struct AppConfiguration {
     static var baseURL = "https://mt4-api.bdswiss-staging.com/"
 }
 
-enum NetworkError: Error {
+public enum NetworkError: Error {
     case badURL
 }
