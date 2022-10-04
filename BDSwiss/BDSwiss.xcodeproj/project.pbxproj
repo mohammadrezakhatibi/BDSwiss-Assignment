@@ -16,6 +16,12 @@
 		D7ABB69728EC038B00A599B6 /* BDSwissUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB69628EC038B00A599B6 /* BDSwissUITestsLaunchTests.swift */; };
 		D7ABB6A628EC056A00A599B6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6A528EC056A00A599B6 /* MainCoordinator.swift */; };
 		D7ABB6A928EC07D900A599B6 /* MainCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6A828EC07D900A599B6 /* MainCoordinatorTests.swift */; };
+		D7ABB6B028EC097400A599B6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6AF28EC097400A599B6 /* ListViewController.swift */; };
+		D7ABB6B428EC09E200A599B6 /* UITableView+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6B328EC09E200A599B6 /* UITableView+ReusableCell.swift */; };
+		D7ABB6B628EC0AA000A599B6 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6B528EC0AA000A599B6 /* UIViewController+Alert.swift */; };
+		D7ABB6B828EC0AD500A599B6 /* LisViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6B728EC0AD500A599B6 /* LisViewControllerTests.swift */; };
+		D7ABB6BB28EC0C1000A599B6 /* ListViewController+SimulateLoadingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6BA28EC0C1000A599B6 /* ListViewController+SimulateLoadingData.swift */; };
+		D7ABB6BE28EC0C6800A599B6 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB6BD28EC0C6800A599B6 /* ItemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		D7ABB69628EC038B00A599B6 /* BDSwissUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDSwissUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D7ABB6A528EC056A00A599B6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		D7ABB6A828EC07D900A599B6 /* MainCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorTests.swift; sourceTree = "<group>"; };
+		D7ABB6AF28EC097400A599B6 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		D7ABB6B328EC09E200A599B6 /* UITableView+ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ReusableCell.swift"; sourceTree = "<group>"; };
+		D7ABB6B528EC0AA000A599B6 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		D7ABB6B728EC0AD500A599B6 /* LisViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LisViewControllerTests.swift; sourceTree = "<group>"; };
+		D7ABB6BA28EC0C1000A599B6 /* ListViewController+SimulateLoadingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewController+SimulateLoadingData.swift"; sourceTree = "<group>"; };
+		D7ABB6BD28EC0C6800A599B6 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,8 @@
 		D7ABB67228EC038800A599B6 /* BDSwiss */ = {
 			isa = PBXGroup;
 			children = (
+				D7ABB6B128EC09A900A599B6 /* Helpers */,
+				D7ABB6AB28EC093900A599B6 /* Domain */,
 				D7ABB6AA28EC07F800A599B6 /* Resources */,
 				D7ABB6A428EC055500A599B6 /* Coordinator */,
 				D7ABB6A328EC03BE00A599B6 /* Application */,
@@ -109,8 +123,10 @@
 		D7ABB68928EC038B00A599B6 /* BDSwissTests */ = {
 			isa = PBXGroup;
 			children = (
+				D7ABB6B928EC0BF200A599B6 /* Helpers */,
 				D7ABB6A728EC07BF00A599B6 /* Coordinators */,
 				D7ABB68A28EC038B00A599B6 /* BDSwissTests.swift */,
+				D7ABB6B728EC0AD500A599B6 /* LisViewControllerTests.swift */,
 			);
 			path = BDSwissTests;
 			sourceTree = "<group>";
@@ -157,6 +173,72 @@
 				D7ABB67E28EC038A00A599B6 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D7ABB6AB28EC093900A599B6 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D7ABB6AD28EC095400A599B6 /* Shared */,
+				D7ABB6AC28EC094600A599B6 /* Currency Rate */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
+		D7ABB6AC28EC094600A599B6 /* Currency Rate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Currency Rate";
+			sourceTree = "<group>";
+		};
+		D7ABB6AD28EC095400A599B6 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D7ABB6BC28EC0C5C00A599B6 /* View Models */,
+				D7ABB6AE28EC096600A599B6 /* Controllers */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		D7ABB6AE28EC096600A599B6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D7ABB6AF28EC097400A599B6 /* ListViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D7ABB6B128EC09A900A599B6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D7ABB6B228EC09BE00A599B6 /* Extentions */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		D7ABB6B228EC09BE00A599B6 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				D7ABB6B328EC09E200A599B6 /* UITableView+ReusableCell.swift */,
+				D7ABB6B528EC0AA000A599B6 /* UIViewController+Alert.swift */,
+			);
+			name = Extentions;
+			sourceTree = "<group>";
+		};
+		D7ABB6B928EC0BF200A599B6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D7ABB6BA28EC0C1000A599B6 /* ListViewController+SimulateLoadingData.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D7ABB6BC28EC0C5C00A599B6 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				D7ABB6BD28EC0C6800A599B6 /* ItemViewModel.swift */,
+			);
+			name = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +373,10 @@
 			files = (
 				D7ABB6A628EC056A00A599B6 /* MainCoordinator.swift in Sources */,
 				D7ABB67428EC038800A599B6 /* AppDelegate.swift in Sources */,
+				D7ABB6B428EC09E200A599B6 /* UITableView+ReusableCell.swift in Sources */,
+				D7ABB6BE28EC0C6800A599B6 /* ItemViewModel.swift in Sources */,
+				D7ABB6B628EC0AA000A599B6 /* UIViewController+Alert.swift in Sources */,
+				D7ABB6B028EC097400A599B6 /* ListViewController.swift in Sources */,
 				D7ABB67628EC038800A599B6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +386,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7ABB68B28EC038B00A599B6 /* BDSwissTests.swift in Sources */,
+				D7ABB6BB28EC0C1000A599B6 /* ListViewController+SimulateLoadingData.swift in Sources */,
+				D7ABB6B828EC0AD500A599B6 /* LisViewControllerTests.swift in Sources */,
 				D7ABB6A928EC07D900A599B6 /* MainCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
