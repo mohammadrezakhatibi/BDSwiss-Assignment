@@ -18,15 +18,13 @@ protocol ListService {
 
 class ListViewController: UITableViewController {
     var service: ListService?
-    var loading: UIActivityIndicatorView!
+    var loading = UIActivityIndicatorView(style: .medium)
     
     var items = [ItemViewModel]()
     
     init(service: ListService) {
         super.init(nibName: nil, bundle: nil)
         self.service = service
-        
-        loading = UIActivityIndicatorView(style: .medium)
     }
     
     required init?(coder: NSCoder) {
@@ -66,7 +64,7 @@ class ListViewController: UITableViewController {
         
         loading.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(loading)
-        NSLayoutConstraint(item: loading!, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: loading, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
         loading.startAnimating()
         loading.hidesWhenStopped = true
