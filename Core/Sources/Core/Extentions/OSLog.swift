@@ -13,4 +13,5 @@ public extension OSLog {
     
     static let decoding = OSLog(subsystem: subsystem, category: "decoding")
     static let network = OSLog(subsystem: subsystem, category: "network")
+    static let failure = OSLog(subsystem: subsystem, category: "failure")
 }

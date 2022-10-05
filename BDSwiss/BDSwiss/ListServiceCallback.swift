@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import OSLog
+import Core
 
 struct ListServiceWithCallback: ListService {
     
@@ -18,8 +20,9 @@ struct ListServiceWithCallback: ListService {
             case .success:
                 completion(result)
                 callback.loadItems(completion: completion)
-            case .failure:
+            case let .failure(error):
                 completion(result)
+                os_log("Error on loading items on ListServiceWithCallback with error: %{public}@", log: OSLog.failure, type: .error, "\(error)")
             }
         }
     }

@@ -7,6 +7,8 @@
 
 import Foundation
 import APIManager
+import OSLog
+import Core
 
 protocol RateService {
     func loadRates(completion: @escaping (Result<RatesResponse, Error>) -> Void)
@@ -23,6 +25,7 @@ class RateAPIService: RateService {
                 completion(.success(response))
             } catch {
                 completion(.failure(error))
+                os_log("Error on loading items on RateAPIService with error: %{public}@", log: OSLog.network, type: .error, "\(error)")
             }
         }
     }

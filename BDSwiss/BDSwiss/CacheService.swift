@@ -7,6 +7,7 @@
 
 import Foundation
 import OSLog
+import Core
 
 protocol CacheService {
     func saveData(items: [ItemViewModel])

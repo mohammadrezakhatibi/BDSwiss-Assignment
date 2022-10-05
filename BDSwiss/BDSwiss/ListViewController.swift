@@ -7,6 +7,7 @@
 
 import UIKit
 import Core
+import OSLog
 
 protocol ListService {
     /// Provide datas for ListViewController
@@ -56,6 +57,7 @@ class ListViewController: UITableViewController {
                 self.show(error: error, secondAction: UIAlertAction(title: "Retry", style: .default, handler: { [weak self] _ in
                     self?.refresh()
                 }))
+                os_log("Error on loading items on ListViewController with error: %{public}@", log: OSLog.network, type: .error, "\(error)")
             }
         })
     }
