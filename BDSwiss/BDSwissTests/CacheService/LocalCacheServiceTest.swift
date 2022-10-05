@@ -22,7 +22,7 @@ class LocalCacheServiceTest: XCTestCase {
         try super.tearDownWithError()
     }
     
-    func test_retrieveDatas_after_savingDatas() {
+    func test_loadDatas_shouldEqualWith_savingDatas() {
         
         // Given
         let items = [ItemViewModel(title: "EURUSD", subtitle: "0.906437584162075"),
@@ -30,7 +30,7 @@ class LocalCacheServiceTest: XCTestCase {
         sut.saveData(items: items)
         
         // When
-        let retrievingDatas = sut.loadData()
+        let retrievingDatas: [ItemViewModel] = sut.loadData()
         
         // Then
         XCTAssertEqual(retrievingDatas, items)

@@ -27,7 +27,7 @@ class RateListViewControllerTests: XCTestCase {
         XCTAssertEqual("Rates", sut.title)
     }
     
-    func test_ratesList_serviceShouldCall_when_viewViewDidLoad() {
+    func test_ratesList_serviceShouldCall_when_viewDidLoad() {
         let api = MockRateAPIService()
         let cache = MockCacheService()
         let service = MockRateServiceAdapter(api: api, cache: cache)
@@ -39,7 +39,7 @@ class RateListViewControllerTests: XCTestCase {
         XCTAssertTrue(service.isCalled)
     }
     
-    func test_changeRateStatus_when_rateGoesUp() {
+    func test_changeRateColorToGreen_when_rateGoesUp() {
         // Given
         let response = [ItemViewModel(title: "EURUSD", subtitle: "1.2812678708738442")]
         let cachedItems = [ItemViewModel(title: "EURUSD", subtitle: "0.9812678708738442")]
@@ -58,7 +58,26 @@ class RateListViewControllerTests: XCTestCase {
     
     }
     
-    func test_greenFlag_when_rateIsNotValid() {
+    func test_changeRateColorToRed_when_rateGoesDown() {
+        // Given
+        let response = [ItemViewModel(title: "EURUSD", subtitle: "0.9812678708738442")]
+        let cachedItems = [ItemViewModel(title: "EURUSD", subtitle: "1.2812678708738442")]
+        
+        let api = MockRateAPIService()
+        let cache = MockCacheService(items: cachedItems)
+        let service = MockRateServiceAdapter(api: api, cache: cache)
+        
+        sut.service = service
+        
+        sut.simulateLoadingData()
+                              
+        let result = service.makeRatesFromAPIResult(with: response)
+        
+        XCTAssertEqual(result.first?.color, .red)
+    
+    }
+    
+    func test_changeRateColorToGreen_when_rateIsNotValid() {
         // Given
         let response = [ItemViewModel(title: "EURUSD", subtitle: "test")]
         let cachedItems = [ItemViewModel(title: "EURUSD", subtitle: "test")]
@@ -78,7 +97,7 @@ class RateListViewControllerTests: XCTestCase {
     
     }
     
-    func test_returnSameItems_atFirstCall() {
+    func test_returnAPIResultItems_atFirstTheCall() {
         // Given
         let rate = [ItemViewModel(title: "EURUSD", subtitle: "0.906437584162075")]
         
@@ -95,11 +114,8 @@ class RateListViewControllerTests: XCTestCase {
     }
     
     func test_successful_apiCall() {
-        // Given
-        let response = RatesResponse(rates: [Rate(symbol: "EURUSD", price: 1.1812678708738442),
-                                            Rate(symbol: "GBPUSD", price: 0.8970326033658917)])
         
-        let api = MockRateAPIService.success(response)
+        let api = MockRateAPIService.once()
         let cache = MockCacheService()
         let service = MockRateServiceAdapter(api: api, cache: cache)
         
@@ -113,7 +129,7 @@ class RateListViewControllerTests: XCTestCase {
     
     }
     
-    func test_whenAPIFailed_itemCountShouldBeZero() {
+    func test_whenAPIFailed_itemsCountShouldBeZero() {
         
         // Given
         let api = MockRateAPIService.never(anError())
@@ -127,9 +143,10 @@ class RateListViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.items.count, 0)
     
     }
+    
 }
 
-private extension UINavigationController {
+extension UINavigationController {
     
     func ratesListVC() throws -> ListViewController {
         let vc = try XCTUnwrap(children.first as? ListViewController, "couldn't find expenses list")
@@ -138,81 +155,10 @@ private extension UINavigationController {
 }
 
 
-
-class MockRateServiceAdapter: RateListServiceAdapter {
+class MockListServiceCallback: ListService {
     
     var isCalled = false
-    
-    override func loadItems(completion: @escaping (Result<[ItemViewModel], Error>) -> Void) {
+    func loadItems(completion: @escaping (Result<[ItemViewModel], Error>) -> Void) {
         isCalled = true
-        super.loadItems(completion: completion)
     }
-}
-
-class MockRateAPIService: RateAPIService {
-    
-    var isCalled = false
-    override func loadRates(completion: @escaping (Result<RatesResponse, Error>) -> Void) {
-        isCalled = true
-        super.loadRates(completion: completion)
-    }
-}
-
-class MockCacheService: LocalCacheService {
-    var items: [ItemViewModel]?
-    
-    convenience init(items: [ItemViewModel]) {
-        self.init()
-        self.items = items
-    }
-    
-    override func saveData(items: [ItemViewModel]) {
-        super.saveData(items: self.items ?? items)
-    }
-    
-    override func loadData() -> [ItemViewModel] {
-        return items ?? []
-    }
-}
-
-
-extension MockRateAPIService {
-    
-    static func never(_ error: Error) -> RateService {
-        results(.failure(error))
-    }
-    static func success(_ friends: RatesResponse) -> RateService {
-        results(.success(friends))
-    }
-    
-    static func results(_ result: Result<RatesResponse, Error>) -> RateService {
-        return resultBuilder { result }
-    }
-    
-    static func resultBuilder(_ resultBuilder: @escaping () -> Result<RatesResponse, Error>) -> RateService {
-        ItemServiceStub(resultBuilder: resultBuilder)
-    }
-    
-    private class ItemServiceStub: RateService {
-       
-        private let nextResult: () -> Result<RatesResponse, Error>
-        
-        init(resultBuilder: @escaping () -> Result<RatesResponse, Error>) {
-            nextResult = resultBuilder
-        }
-        func loadRates(completion: @escaping (Result<RatesResponse, Error>) -> Void) {
-            completion(nextResult())
-        }
-    }
-    
-}
-
-func anError() -> Error {
-    NSError(localizedDescription: "any error message")
-}
-
-extension NSError {
-     convenience init(localizedDescription: String) {
-         self.init(domain: "Test", code: 0, userInfo: [NSLocalizedDescriptionKey: localizedDescription])
-     }
 }

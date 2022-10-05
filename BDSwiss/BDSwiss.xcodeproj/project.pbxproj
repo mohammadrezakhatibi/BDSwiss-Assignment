@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D77A0A9528ED62C4003BD0E6 /* MockRateServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A0A9428ED62C4003BD0E6 /* MockRateServiceAdapter.swift */; };
+		D77A0A9728ED62EC003BD0E6 /* MockRateAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A0A9628ED62EC003BD0E6 /* MockRateAPIService.swift */; };
+		D77A0A9928ED6305003BD0E6 /* MockCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A0A9828ED6305003BD0E6 /* MockCacheService.swift */; };
+		D77A0A9B28ED633B003BD0E6 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A0A9A28ED633B003BD0E6 /* NSError.swift */; };
+		D77A0AA228ED6757003BD0E6 /* ListServiceWithCallbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A0AA128ED6757003BD0E6 /* ListServiceWithCallbackTests.swift */; };
 		D7ABB67428EC038800A599B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB67328EC038800A599B6 /* AppDelegate.swift */; };
 		D7ABB67628EC038800A599B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABB67528EC038800A599B6 /* SceneDelegate.swift */; };
 		D7ABB67D28EC038A00A599B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7ABB67C28EC038A00A599B6 /* Assets.xcassets */; };
@@ -51,6 +56,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D77A0A9428ED62C4003BD0E6 /* MockRateServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRateServiceAdapter.swift; sourceTree = "<group>"; };
+		D77A0A9628ED62EC003BD0E6 /* MockRateAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRateAPIService.swift; sourceTree = "<group>"; };
+		D77A0A9828ED6305003BD0E6 /* MockCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCacheService.swift; sourceTree = "<group>"; };
+		D77A0A9A28ED633B003BD0E6 /* NSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
+		D77A0AA128ED6757003BD0E6 /* ListServiceWithCallbackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServiceWithCallbackTests.swift; sourceTree = "<group>"; };
 		D7ABB67028EC038800A599B6 /* BDSwiss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDSwiss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7ABB67328EC038800A599B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7ABB67528EC038800A599B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +118,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D77A0A9228ED62A7003BD0E6 /* Rate List */ = {
+			isa = PBXGroup;
+			children = (
+				D77A0A9328ED62B2003BD0E6 /* Mocks */,
+				D7ABB6C828EC103300A599B6 /* RateListViewControllerTests.swift */,
+			);
+			path = "Rate List";
+			sourceTree = "<group>";
+		};
+		D77A0A9328ED62B2003BD0E6 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				D77A0A9428ED62C4003BD0E6 /* MockRateServiceAdapter.swift */,
+				D77A0A9628ED62EC003BD0E6 /* MockRateAPIService.swift */,
+				D77A0A9828ED6305003BD0E6 /* MockCacheService.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		D77A0A9C28ED634D003BD0E6 /* ItemViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D7ABB6D828EC326200A599B6 /* ItemViewModelTests.swift */,
+			);
+			path = ItemViewModel;
+			sourceTree = "<group>";
+		};
+		D77A0A9D28ED6358003BD0E6 /* ListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D7ABB6B728EC0AD500A599B6 /* LisViewControllerTests.swift */,
+				D77A0AA128ED6757003BD0E6 /* ListServiceWithCallbackTests.swift */,
+			);
+			path = ListViewController;
+			sourceTree = "<group>";
+		};
+		D77A0A9E28ED6365003BD0E6 /* CacheService */ = {
+			isa = PBXGroup;
+			children = (
+				E49E620B28EC738A00B4127C /* LocalCacheServiceTest.swift */,
+			);
+			path = CacheService;
+			sourceTree = "<group>";
+		};
 		D7ABB66728EC038800A599B6 = {
 			isa = PBXGroup;
 			children = (
@@ -145,12 +199,12 @@
 		D7ABB68928EC038B00A599B6 /* BDSwissTests */ = {
 			isa = PBXGroup;
 			children = (
-				D7ABB6B928EC0BF200A599B6 /* Helpers */,
+				D77A0A9E28ED6365003BD0E6 /* CacheService */,
 				D7ABB6A728EC07BF00A599B6 /* Coordinators */,
-				D7ABB6B728EC0AD500A599B6 /* LisViewControllerTests.swift */,
-				D7ABB6C828EC103300A599B6 /* RateListViewControllerTests.swift */,
-				D7ABB6D828EC326200A599B6 /* ItemViewModelTests.swift */,
-				E49E620B28EC738A00B4127C /* LocalCacheServiceTest.swift */,
+				D7ABB6B928EC0BF200A599B6 /* Helpers */,
+				D77A0A9C28ED634D003BD0E6 /* ItemViewModel */,
+				D77A0A9D28ED6358003BD0E6 /* ListViewController */,
+				D77A0A9228ED62A7003BD0E6 /* Rate List */,
 			);
 			path = BDSwissTests;
 			sourceTree = "<group>";
@@ -242,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				D7ABB6BA28EC0C1000A599B6 /* ListViewController+SimulateLoadingData.swift */,
+				D77A0A9A28ED633B003BD0E6 /* NSError.swift */,
 				D7ABB6CA28EC10A600A599B6 /* SceneBuilder.swift */,
 			);
 			path = Helpers;
@@ -414,13 +469,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D77A0A9928ED6305003BD0E6 /* MockCacheService.swift in Sources */,
+				D77A0A9B28ED633B003BD0E6 /* NSError.swift in Sources */,
+				D77A0A9728ED62EC003BD0E6 /* MockRateAPIService.swift in Sources */,
 				D7ABB6BB28EC0C1000A599B6 /* ListViewController+SimulateLoadingData.swift in Sources */,
 				E49E620C28EC738A00B4127C /* LocalCacheServiceTest.swift in Sources */,
 				D7ABB6B828EC0AD500A599B6 /* LisViewControllerTests.swift in Sources */,
+				D77A0AA228ED6757003BD0E6 /* ListServiceWithCallbackTests.swift in Sources */,
 				D7ABB6C928EC103300A599B6 /* RateListViewControllerTests.swift in Sources */,
 				D7ABB6A928EC07D900A599B6 /* MainCoordinatorTests.swift in Sources */,
 				D7ABB6CB28EC10A600A599B6 /* SceneBuilder.swift in Sources */,
 				D7ABB6D928EC326300A599B6 /* ItemViewModelTests.swift in Sources */,
+				D77A0A9528ED62C4003BD0E6 /* MockRateServiceAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
