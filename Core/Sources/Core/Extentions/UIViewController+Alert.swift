@@ -8,8 +8,11 @@
 import UIKit
 
 public extension UIViewController {
-    func show(error: Error) {
+    func show(error: Error, secondAction: UIAlertAction? = nil) {
         let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        if let secondAction = secondAction {
+            alert.addAction(secondAction)
+        }
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         presenterVC.present(alert, animated: true)
     }

@@ -27,10 +27,14 @@ public extension APIManager {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         
-        let (data, _) = try await session.data(for: request)
+        do {
+            let (data, _) = try await session.data(for: request)
+            let decoder = JSONDecoder()
+            return try decoder.decode(T.self, from: data)
+        } catch {
+            throw NetworkError.somethingHappened
+        }
         
-        let decoder = JSONDecoder()
-        return try decoder.decode(T.self, from: data)
     }
 }
 
@@ -50,4 +54,5 @@ public struct AppConfiguration {
 
 public enum NetworkError: Error {
     case badURL
+    case somethingHappened
 }

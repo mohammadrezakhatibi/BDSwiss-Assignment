@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import OSLog
+import Core
 
 class RateListServiceAdapter: ListService {
     
@@ -33,6 +35,7 @@ class RateListServiceAdapter: ListService {
                 completion(.success(items))
             case let .failure(error):
                 completion(.failure(error))
+                os_log("Error on loading items from api: %{public}@", log: OSLog.network, type: .error, "\(error)")
             }
         }
     }
@@ -83,7 +86,7 @@ extension Double {
     /// Format doubles to the specific number.
     ///
     /// - Parameters:
-    ///   - fractionDigits: Number of fraction.
+    ///   - fractionDigits: Number of fraction Digits.
     ///
     /// - Returns: String
     func limitDecimal(to fractionDigits: Int) -> String {

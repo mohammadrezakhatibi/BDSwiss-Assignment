@@ -55,7 +55,9 @@ class ListViewController: UITableViewController {
                 
             case let .failure(error):
                 self.loading.stopAnimating()
-                self.show(error: error)
+                self.show(error: error, secondAction: UIAlertAction(title: "Retry", style: .default, handler: { [weak self] _ in
+                    self?.refresh()
+                }))
             }
         })
     }

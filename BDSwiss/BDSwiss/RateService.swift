@@ -13,10 +13,13 @@ protocol RateService {
 }
 
 class RateAPIService: RateService {
+    
+    var api = APIManager.shared
+    
     func loadRates(completion: @escaping (Result<RatesResponse, Error>) -> Void) {
         Task { @MainActor in
             do {
-                let response: RatesResponse = try await APIManager.shared.request(method: .get, path: .rates)
+                let response: RatesResponse = try await api.request(method: .get, path: .rates)
                 completion(.success(response))
             } catch {
                 completion(.failure(error))

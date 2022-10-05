@@ -58,10 +58,10 @@ class RateListViewControllerTests: XCTestCase {
     
     }
     
-    func test_changeRateStatus_when_rateGoesDown() {
+    func test_greenFlag_when_rateIsNotValid() {
         // Given
-        let response = [ItemViewModel(title: "EURUSD", subtitle: "1.0812678708738442")]
-        let cachedItems = [ItemViewModel(title: "EURUSD", subtitle: "1.1812678708738442")]
+        let response = [ItemViewModel(title: "EURUSD", subtitle: "test")]
+        let cachedItems = [ItemViewModel(title: "EURUSD", subtitle: "test")]
         
         let api = MockRateAPIService()
         let cache = MockCacheService(items: cachedItems)
@@ -73,7 +73,8 @@ class RateListViewControllerTests: XCTestCase {
                               
         let result = service.makeRatesFromAPIResult(with: response)
         
-        XCTAssertEqual(result.first?.color, .red)
+        XCTAssertEqual(result.first?.color, .green)
+        XCTAssertEqual(result.first?.color, .green)
     
     }
     

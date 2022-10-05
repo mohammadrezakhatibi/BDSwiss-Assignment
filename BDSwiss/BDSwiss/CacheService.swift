@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OSLog
 
 protocol CacheService {
     func saveData(items: [ItemViewModel])
@@ -32,6 +33,7 @@ class LocalCacheService: CacheService {
 
             } catch {
                 print("Unable to Decode Items (\(error))")
+                os_log("Unable to Decode Items", log: .decoding, type: .error)
             }
         }
         return []
