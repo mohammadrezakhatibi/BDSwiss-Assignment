@@ -5,5 +5,5 @@ workflows:
     scripts:
       - name: Tests
         script: |
-          xcodebuild clean build test -project BDSwiss/BDSwiss.xcodeproj -scheme "BDSwiss" CODE_SIGN_IDENTITY="" CODE_SIGN_REQUIRED=NO
+          xcodebuild clean build test -project BDSwiss/BDSwiss.xcodeproj -scheme "CI" CODE_SIGN_IDENTITY="" CODE_SIGN_REQUIRED=NO
 
