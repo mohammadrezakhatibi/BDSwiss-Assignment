@@ -1,0 +1,9 @@
+workflows:
+  ios-workflow:
+    environment:
+      xcode: latest
+    scripts:
+      - name: Tests
+        script: |
+          xcodebuild clean build test -project BDSwiss/BDSwiss.xcodeproj -scheme "BDSwiss" CODE_SIGN_IDENTITY="" CODE_SIGN_REQUIRED=NO
+
